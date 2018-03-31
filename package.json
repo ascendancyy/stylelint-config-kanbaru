@@ -1,0 +1,36 @@
+{
+  "name": "@ascendancyy/stylelint-config-kanbaru",
+  "version": "1.0.0",
+  "description": "personal stylelint config",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ascendancyy/stylelint-config-kanbaru.git"
+  },
+  "keywords": [
+    "stylelint"
+  ],
+  "author": "Stephen Lam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ascendancyy/stylelint-config-kanbaru/issues"
+  },
+  "homepage": "https://github.com/ascendancyy/stylelint-config-kanbaru#readme",
+  "devDependencies": {
+    "@ascendancyy/eslint-config-eva": "^2.0.1",
+    "eslint": "^4.19.1",
+    "stylelint": "^9.1.3"
+  },
+  "dependencies": {
+    "stylelint-order": "^0.8.1"
+  },
+  "peerDependencies": {
+    "stylelint": "^9.0.0"
+  }
+}
