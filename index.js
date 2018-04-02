@@ -366,7 +366,6 @@ module.exports = {
       ],
       {
         unspecified: 'bottom',
-        disableFix: true,
       },
     ],
     'order/properties-order': [
@@ -691,7 +690,6 @@ module.exports = {
       ],
       {
         unspecified: 'bottomAlphabetical',
-        disableFix: true,
       },
     ],
   },
