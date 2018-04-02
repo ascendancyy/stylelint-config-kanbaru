@@ -1,6 +1,6 @@
 {
   "name": "@ascendancyy/stylelint-config-kanbaru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "personal stylelint config",
   "main": "index.js",
   "scripts": {
