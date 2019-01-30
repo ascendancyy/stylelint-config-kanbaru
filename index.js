@@ -22,6 +22,7 @@ module.exports = {
       { severity: 'warning' },
     ],
 
+    'function-calc-no-invalid': true,
     'function-calc-no-unspaced-operator': true,
     'function-linear-gradient-no-nonstandard-direction': true,
     'function-blacklist': null,
@@ -98,6 +99,7 @@ module.exports = {
     'value-list-max-empty-lines': 0,
 
     'keyframe-declaration-no-important': null,
+    'keyframes-name-pattern': null,
 
     'declaration-no-important': true,
     'declaration-property-unit-blacklist': null,
@@ -193,6 +195,7 @@ module.exports = {
     'selector-max-compound-selectors': 3,
     'selector-max-empty-lines': 0,
     'selector-max-id': 1,
+    'selector-max-pseudo-class': 2,
     'selector-max-specificity': null,
     'selector-max-type': null,
     'selector-max-universal': 1,
@@ -260,6 +263,7 @@ module.exports = {
       },
     ],
 
+    'media-feature-name-value-whitelist': null,
     'media-feature-name-no-unknown': null,
     'media-feature-name-blacklist': null,
     'media-feature-name-whitelist': null,
@@ -352,6 +356,7 @@ module.exports = {
     'max-line-length': null,
     'no-eol-whitespace': true,
     'no-missing-end-of-source-newline': true,
+    'no-empty-first-line': true,
 
     'order/order': [
       [
