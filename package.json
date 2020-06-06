@@ -23,14 +23,14 @@
   },
   "homepage": "https://github.com/ascendancyy/stylelint-config-kanbaru#readme",
   "devDependencies": {
-    "@ascendancyy/eslint-config-eva": "^3.0.0",
-    "eslint": "^5.12.1",
-    "stylelint": "^9.10.1"
+    "@ascendancyy/eslint-config-eva": "^3.1.1",
+    "eslint": "^7.1.0",
+    "stylelint": "^13.5.0"
   },
   "dependencies": {
-    "stylelint-order": "^2.0.0"
+    "stylelint-order": "^4.1.0"
   },
   "peerDependencies": {
-    "stylelint": ">=9.10.0"
+    "stylelint": ">=13.5.0"
   }
 }
