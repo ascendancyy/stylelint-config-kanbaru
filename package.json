@@ -4,7 +4,7 @@
   "description": "personal stylelint config",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js"
+    "test": "eslint index.js order.js"
   },
   "publishConfig": {
     "access": "public"

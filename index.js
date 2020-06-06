@@ -1,7 +1,8 @@
 module.exports = {
-  plugins: ['stylelint-order'],
+  extends: ['./order'],
   rules: {
     'color-no-invalid-hex': true,
+    'color-function-notation': 'modern',
     'color-named': 'never',
     'color-no-hex': null,
     'color-hex-case': 'lower',
@@ -54,7 +55,10 @@ module.exports = {
     'number-leading-zero': 'always',
     'number-no-trailing-zeros': true,
 
-    'time-min-milliseconds': null,
+    'time-min-milliseconds': [
+      50,
+      { ignore: ['delay'] },
+    ],
 
     'string-no-newline': true,
     'string-quotes': 'single',
@@ -263,7 +267,6 @@ module.exports = {
       },
     ],
 
-    'media-feature-name-value-whitelist': null,
     'media-feature-name-no-unknown': null,
     'media-feature-name-blacklist': null,
     'media-feature-name-whitelist': null,
@@ -307,6 +310,7 @@ module.exports = {
     'at-rule-blacklist': null,
     'at-rule-whitelist': null,
     'at-rule-no-vendor-prefix': true,
+    'at-rule-property-requirelist': null,
     'at-rule-empty-line-before': null,
     'at-rule-name-case': 'lower',
     'at-rule-name-newline-after': null,
@@ -345,6 +349,7 @@ module.exports = {
     'no-invalid-double-slash-comments': true,
     'max-nesting-depth': 1,
     'no-unknown-animations': null,
+
     indentation: [
       2,
       {
@@ -356,346 +361,11 @@ module.exports = {
     'max-line-length': null,
     'no-eol-whitespace': true,
     'no-missing-end-of-source-newline': true,
+    linebreaks: 'unix',
     'no-empty-first-line': true,
+    'unicode-bom': 'never',
 
-    'order/order': [
-      [
-        'dollar-variables',
-        'custom-properties',
-        { type: 'at-rule', name: 'extend' },
-        'declarations',
-        { type: 'at-rule', name: 'media' },
-        'at-rules',
-        { type: 'at-rule', name: 'include', parameter: 'classless' },
-        'rules',
-      ],
-      {
-        unspecified: 'bottom',
-      },
-    ],
-    'order/properties-order': [
-      [
-        'composes',
-        'content',
-        'box-sizing',
-        {
-          properties: [
-            'position',
-            'top',
-            'right',
-            'bottom',
-            'left',
-            'z-index',
-          ],
-        },
-        {
-          properties: [
-            'float',
-            'clear',
-          ],
-        },
-        'vertical-align',
-        {
-          properties: [
-            'display',
-            'justify-items',
-            'justify-content',
-            'align-items',
-            'align-content',
-            'align-self',
-
-            'flex-flow',
-            'flex-direction',
-            'flex-wrap',
-
-            'flex',
-            'flex-grow',
-            'flex-shrink',
-            'flex-basis',
-
-            'order',
-          ],
-        },
-        {
-          properties: [
-            'grid',
-            'grid-template',
-            'grid-template-rows',
-            'grid-template-columns',
-            'grid-template-areas',
-
-            'grid-auto-rows',
-            'grid-auto-columns',
-            'grid-auto-flow',
-            'grid-gap',
-            'grid-row-gap',
-            'grid-column-gap',
-
-            'grid-area',
-
-            'grid-row',
-            'grid-row-start',
-            'grid-row-end',
-
-            'grid-column',
-            'grid-column-start',
-            'grid-column-end',
-          ],
-        },
-        {
-          properties: [
-            'columns',
-            'column-width',
-            'column-count',
-
-            'column-fill',
-            'column-span',
-            'column-gap',
-
-            'column-rule',
-            'column-rule-width',
-            'column-rule-style',
-            'column-rule-color',
-          ],
-        },
-        {
-          properties: [
-            'table-layout',
-            'border-collapse',
-            'border-spacing',
-            'empty-cells',
-            'caption-side',
-          ],
-        },
-        {
-          properties: [
-            'margin',
-            'margin-top',
-            'margin-right',
-            'margin-bottom',
-            'margin-left',
-
-            'min-width',
-            'width',
-            'max-width',
-
-            'min-height',
-            'height',
-            'max-height',
-
-            'padding',
-            'padding-top',
-            'padding-right',
-            'padding-bottom',
-            'padding-left',
-          ],
-        },
-        {
-          properties: [
-            'color',
-
-            'font',
-            'font-style',
-            'font-variant',
-            'font-weight',
-            'font-size',
-            'font-family',
-            'font-stretch',
-          ],
-        },
-        {
-          properties: [
-            'quotes',
-            'tab-size',
-            'line-height',
-            'word-spacing',
-            'letter-spacing',
-            'font-size-adjust',
-            'user-select',
-          ],
-        },
-        {
-          properties: [
-            'direction',
-            'text-align',
-            'text-align-last',
-            'text-justify',
-
-            'white-space',
-            'word-break',
-            'word-wrap',
-          ],
-        },
-        {
-          properties: [
-            'text-indent',
-            'text-transform',
-            'text-decoration',
-            'text-decoration-color',
-            'text-decoration-line',
-            'text-decoration-style',
-
-            'text-rendering',
-            'text-shadow',
-            'text-overflow',
-          ],
-        },
-        {
-          properties: [
-            'cursor',
-            'pointer-events',
-            'appearance',
-            'opacity',
-            'visibility',
-            'backface-visibility',
-          ],
-        },
-        {
-          properties: [
-            'list-style',
-            'list-style-type',
-            'list-style-image',
-            'list-style-position',
-          ],
-        },
-        {
-          properties: [
-            'outline',
-            'outline-color',
-            'outline-style',
-            'outline-width',
-            'outline-offset',
-
-            'border',
-            'border-width',
-            'border-style',
-            'border-color',
-
-            'border-top',
-            'border-top-width',
-            'border-top-style',
-            'border-top-color',
-
-            'border-right',
-            'border-right-width',
-            'border-right-style',
-            'border-right-color',
-
-            'border-bottom',
-            'border-bottom-width',
-            'border-bottom-style',
-            'border-bottom-color',
-
-            'border-left',
-            'border-left-width',
-            'border-left-style',
-            'border-left-color',
-
-            'border-image',
-            'border-image-source',
-            'border-image-slice',
-            'border-image-width',
-            'border-image-outset',
-            'border-image-repeat',
-
-            'border-radius',
-            'border-top-left-radius',
-            'border-top-right-radius',
-            'border-bottom-left-radius',
-            'border-bottom-right-radius',
-          ],
-        },
-        {
-          properties: [
-            'background',
-            'background-image',
-            'background-position',
-            'background-position-x',
-            'background-position-y',
-            'background-size',
-            'background-repeat',
-            'background-origin',
-            'background-clip',
-            'background-attachment',
-            'background-color',
-
-            'box-shadow',
-          ],
-        },
-        {
-          properties: [
-            'filter',
-            'backdrop-filter',
-          ],
-        },
-        {
-          properties: [
-            'fill',
-            'fill-opacity',
-            'fill-rule',
-
-            'stroke',
-            'stroke-dasharray',
-            'stroke-dashoffset',
-          ],
-        },
-        {
-          properties: [
-            'perspective',
-            'perspective-origin',
-
-            'transform',
-            'transform-origin',
-            'transform-style',
-          ],
-        },
-        {
-          properties: [
-            'overflow',
-            'overflow-x',
-            'overflow-y',
-            'resize',
-            'contain',
-          ],
-        },
-        {
-          properties: [
-            'transition',
-            'transition-property',
-            'transition-duration',
-            'transition-timing-function',
-            'transition-delay',
-
-            'animation',
-            'animation-name',
-            'animation-duration',
-            'animation-timing-function',
-            'animation-delay',
-            'animation-iteration-count',
-            'animation-direction',
-            'animation-fill-mode',
-            'animation-play-state',
-
-            'will-change',
-          ],
-        },
-        {
-          properties: [
-            'page-break-before',
-            'page-break-after',
-            'page-break-inside',
-          ],
-        },
-        {
-          properties: [
-            'counter-reset',
-            'counter-increment',
-          ],
-        },
-      ],
-      {
-        unspecified: 'bottomAlphabetical',
-      },
-    ],
+    'alpha-value-notation': 'percentage',
+    'hue-degree-notation': 'angle',
   },
 };
