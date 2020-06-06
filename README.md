@@ -1,4 +1,4 @@
-# [kanbaru] stylelint config
+# [kanbaru] Personal stylelint config
 
 ## Install
 
